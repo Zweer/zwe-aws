@@ -1,0 +1,13 @@
+{
+  "name": "zwe-aws",
+  "version": "0.0.1",
+  "description": "Some tools to help with the serverless development",
+  "main": "index.js",
+  "repository": "https://github.com/Zweer/zwe-aws.git",
+  "author": "Niccolò Olivieri Achille <n.olivieriachille@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^11.13.0",
+    "typescript": "^3.4.1"
+  }
+}

@@ -31,9 +31,12 @@ describe('Response', () => {
     });
 
     it('should add the "statusCode"', () => {
-      const statusCode = 200;
+      const statusCode = 202;
+      const data = 'aaa';
+      const body = { statusCode, data };
 
-      expect(createSuccessResponse('aaa', statusCode)).toHaveProperty('statusCode', statusCode);
+      expect(createSuccessResponse(data, statusCode)).toHaveProperty('statusCode', statusCode);
+      expect(createSuccessResponse(data, statusCode)).toHaveProperty('body', JSON.stringify(body));
     });
 
     it('should default to statusCode 200', () => {

@@ -1,0 +1,123 @@
+{
+  "resource": "/testReqRes/{param1}/{param2}",
+  "path": "/testReqRes/foo/bar",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "cache-control": "no-cache",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "IT",
+    "Content-Type": "application/json",
+    "Host": "foo.execute-api.eu-west-1.amazonaws.com",
+    "Postman-Token": "916c726e-a0f7-4cdf-afad-bfa11fb1f1b4",
+    "User-Agent": "PostmanRuntime/7.6.1",
+    "Via": "1.1 785863fe1b0961dc0a54153752ab0c4c.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "foo",
+    "X-Amzn-Trace-Id": "Root=1-5ca7665f-d84854c4c5b579a8f2bdf11a",
+    "X-Forwarded-For": "0.0.0.0",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": [
+      "*/*"
+    ],
+    "Accept-Encoding": [
+      "gzip, deflate"
+    ],
+    "cache-control": [
+      "no-cache"
+    ],
+    "CloudFront-Forwarded-Proto": [
+      "https"
+    ],
+    "CloudFront-Is-Desktop-Viewer": [
+      "true"
+    ],
+    "CloudFront-Is-Mobile-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-SmartTV-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-Tablet-Viewer": [
+      "false"
+    ],
+    "CloudFront-Viewer-Country": [
+      "IT"
+    ],
+    "Content-Type": [
+      "application/json"
+    ],
+    "Host": [
+      "foo.execute-api.eu-west-1.amazonaws.com"
+    ],
+    "Postman-Token": [
+      "916c726e-a0f7-4cdf-afad-bfa11fb1f1b4"
+    ],
+    "User-Agent": [
+      "PostmanRuntime/7.6.1"
+    ],
+    "Via": [
+      "1.1 785863fe1b0961dc0a54153752ab0c4c.cloudfront.net (CloudFront)"
+    ],
+    "X-Amz-Cf-Id": [
+      "foo"
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-5ca7665f-d84854c4c5b579a8f2bdf11a"
+    ],
+    "X-Forwarded-For": [
+      "0.0.0.0"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": {
+    "param1": "foo",
+    "param2": "bar"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "foo",
+    "resourcePath": "/testReqRes/{param1}/{param2}",
+    "httpMethod": "POST",
+    "extendedRequestId": "foo",
+    "requestTime": "05/Apr/2019:14:29:51 +0000",
+    "path": "/dev/testReqRes/foo/bar",
+    "accountId": "123",
+    "protocol": "HTTP/1.1",
+    "stage": "dev",
+    "domainPrefix": "foo",
+    "requestTimeEpoch": 1554474591814,
+    "requestId": "46144f59-57af-11e9-b351-afbe86136fd8",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "0.0.0.0",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "PostmanRuntime/7.6.1",
+      "user": null
+    },
+    "domainName": "foo.execute-api.eu-west-1.amazonaws.com",
+    "apiId": "foo"
+  },
+  "body": "{\n\t\"foo\": \"bar\",\n\t\"apple\": \"pie\"\n}",
+  "isBase64Encoded": false
+}

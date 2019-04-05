@@ -1,4 +1,5 @@
-import { createSuccessResponse } from './response';
+import { createErrorResponse, createSuccessResponse } from './response';
+import { ErrorWithStatus } from './errors';
 
 describe('Response', () => {
   describe('Create Success Response', () => {
@@ -47,6 +48,34 @@ describe('Response', () => {
       const headers = { foo: 'bar' };
 
       expect(createSuccessResponse('aaa', 200, headers)).toHaveProperty('headers', headers);
+    });
+  });
+
+  describe('Create Error Response', () => {
+    it('should convert the error (with status) into the body (default statusCode)', () => {
+      const statusCode = 500;
+      const error = new ErrorWithStatus(null, 'message');
+      const body = { statusCode, error };
+
+      expect(createErrorResponse(error)).toHaveProperty('body', JSON.stringify(body));
+      expect(createErrorResponse(error)).toHaveProperty('statusCode', statusCode);
+    });
+
+    it('should convert the error (with status) into the body (custom statusCode)', () => {
+      const statusCode = 404;
+      const error = new ErrorWithStatus(statusCode, 'message');
+      const body = { statusCode, error };
+
+      expect(createErrorResponse(error)).toHaveProperty('body', JSON.stringify(body));
+      expect(createErrorResponse(error)).toHaveProperty('statusCode', statusCode);
+    });
+
+    it('should allow headers', () => {
+      const headers = { foo: 'bar' };
+      const error = new ErrorWithStatus(null, 'message');
+
+      expect(createErrorResponse(error, headers)).toHaveProperty('headers', headers);
+
     });
   });
 });

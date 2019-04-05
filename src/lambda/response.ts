@@ -21,5 +21,6 @@ export function createSuccessResponse(data: any, statusCode: number = 200, heade
 }
 
 export function createErrorResponse(error: ErrorWithStatus, headers?: headers): APIGatewayProxyResult {
-  return createResponse({ error }, error.statusCode || 500, headers);
+
+  return createResponse({ error: error.toJSON() }, error.statusCode || 500, headers);
 }

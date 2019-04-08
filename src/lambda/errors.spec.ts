@@ -3,21 +3,21 @@ import { ErrorWithStatus, ErrorWithStatus404 } from './errors';
 describe('Errors', () => {
   describe('Error with Status', () => {
     it('should create an error', () => {
-      const errorWithStatus = new ErrorWithStatus(200);
+      const errorWithStatus = new ErrorWithStatus();
 
       expect(errorWithStatus).toBeInstanceOf(Error);
     });
 
     it('should inherit the "message" property', () => {
       const message = 'message';
-      const errorWithStatus = new ErrorWithStatus(200, message);
+      const errorWithStatus = new ErrorWithStatus(message);
 
       expect(errorWithStatus).toHaveProperty('message', message);
     });
 
     it('should have the "statusCode" property', () => {
       const statusCode = 200;
-      const errorWithStatus = new ErrorWithStatus(statusCode);
+      const errorWithStatus = new ErrorWithStatus('', statusCode);
 
       expect(errorWithStatus).toHaveProperty('statusCode', statusCode);
     });

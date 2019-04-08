@@ -54,7 +54,7 @@ describe('Response', () => {
   describe('Create Error Response', () => {
     it('should convert the error (with status) into the body (default statusCode)', () => {
       const statusCode = 500;
-      const error = new ErrorWithStatus(null, 'message');
+      const error = new ErrorWithStatus('message');
       const body = { statusCode, error };
 
       expect(createErrorResponse(error)).toHaveProperty('body', JSON.stringify(body));
@@ -63,7 +63,7 @@ describe('Response', () => {
 
     it('should convert the error (with status) into the body (custom statusCode)', () => {
       const statusCode = 404;
-      const error = new ErrorWithStatus(statusCode, 'message');
+      const error = new ErrorWithStatus('message', statusCode);
       const body = { statusCode, error };
 
       expect(createErrorResponse(error)).toHaveProperty('body', JSON.stringify(body));
@@ -72,7 +72,7 @@ describe('Response', () => {
 
     it('should allow headers', () => {
       const headers = { foo: 'bar' };
-      const error = new ErrorWithStatus(null, 'message');
+      const error = new ErrorWithStatus('message');
 
       expect(createErrorResponse(error, headers)).toHaveProperty('headers', headers);
 

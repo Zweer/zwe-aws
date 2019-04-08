@@ -20,7 +20,8 @@ export function createSuccessResponse(data: any, statusCode: number = 200, heade
   return createResponse({ data }, statusCode, headers);
 }
 
-export function createErrorResponse(error: ErrorWithStatus, headers?: headers): APIGatewayProxyResult {
+export function createErrorResponse(error: ErrorWithStatus | Error, headers?: headers): APIGatewayProxyResult {
+  const errorWithStatus = error instanceof ErrorWithStatus ? error : ErrorWithStatus.fromError(error);
 
-  return createResponse({ error: error.toJSON() }, error.statusCode || 500, headers);
+  return createResponse({ error: errorWithStatus.toJSON() }, errorWithStatus.statusCode, headers);
 }

@@ -22,3 +22,19 @@ functions:
               paths:
                 param1: true
                 param2: false
+  test-params:
+    handler: test/handler.testParams
+    events:
+      - http:
+          method: get
+          path: testParams/{param1}/{param2}
+          request:
+            parameters:
+              param1: true
+              param2: true
+  test-body:
+    handler: test/handler.testBody
+    events:
+      - http:
+          method: post
+          path: testBody

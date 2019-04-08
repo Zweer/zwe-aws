@@ -2,7 +2,8 @@ import { APIGatewayProxyEvent } from 'aws-lambda';
 
 export function parseBody(event: APIGatewayProxyEvent): object {
   const body = event.body;
-  const contentType = event.headers['Content-Type'] || event.headers['content-type'] || '';
+  const contentTypeRaw = event.headers['Content-Type'] || event.headers['content-type'] || '';
+  const [contentType] = contentTypeRaw.split(';');
 
   let bodyObj = {};
 
@@ -16,7 +17,7 @@ export function parseBody(event: APIGatewayProxyEvent): object {
       break;
 
     case 'application/x-www-form-urlencoded':
-      body
+      (body || '')
         .split('&')
         .map(keyValue => keyValue.split('='))
         .forEach(([key, value]) => {

@@ -1,5 +1,6 @@
 import { createSuccessResponse } from '../src/lambda/response';
 import { APIGatewayEvent, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { body, endpoint, param } from '../src/lambda/decorators';
 
 export async function reqres(event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
   const result: APIGatewayProxyEvent = JSON.parse(JSON.stringify(event));
@@ -21,3 +22,20 @@ export async function reqres(event: APIGatewayEvent): Promise<APIGatewayProxyRes
 
   return createSuccessResponse(result);
 }
+
+class Handler {
+  @endpoint
+  async testParams(@param('param1') param1, @param('param2') param2?) {
+    return { param1, param2 };
+  }
+
+  @endpoint
+  async testBody(@body() body, @body('foo') foo?) {
+    return { body, foo };
+  }
+}
+
+const handler = new Handler();
+
+export const testParams = event => handler.testParams(event);
+export const testBody = event => handler.testBody(event);

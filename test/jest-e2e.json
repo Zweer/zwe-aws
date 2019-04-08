@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "rootDir": ".",
+  "testRegex": ".e2e-spec.ts$",
+  "testEnvironment": "node"
+}

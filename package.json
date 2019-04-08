@@ -9,18 +9,20 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest"
+    "test": "jest",
+    "pretest:e2e": "sls deploy && sls exportEndpoints",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.23",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.0",
+    "axios": "^0.18.0",
     "jest": "^24.7.0",
     "prettier": "^1.16.4",
     "serverless": "^1.40.0",
     "serverless-plugin-export-endpoints": "^0.1.2",
     "serverless-webpack": "^5.2.0",
-    "supertest": "^4.0.2",
     "ts-jest": "^24.0.1",
     "ts-loader": "^5.3.3",
     "tslint": "^5.15.0",

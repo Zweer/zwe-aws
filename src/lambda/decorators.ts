@@ -61,7 +61,11 @@ export function endpoint(target: any, propertyName: string, descriptor: TypedPro
       } catch (error) {}
 
       try {
-        message = JSON.parse(message);
+        message = typeof message === 'string' ? JSON.parse(message) : message;
+        message = {
+          text: '',
+          ...message,
+        };
       } catch (error) {
         message = { text: message };
       }

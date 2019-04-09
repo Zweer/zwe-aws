@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:eu-west-1:1234567890:test-telegram:11111111-1c2d-40b2-b7f6-0a7ca32310c0",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "a7a8bfa8-1c4c-5a03-910e-ea8e62132b66",
+        "TopicArn": "arn:aws:sns:eu-west-1:1234567890:test-telegram",
+        "Subject": null,
+        "Message": "{\"foo\":\"bar\"}",
+        "Timestamp": "2019-04-09T11:03:59.568Z",
+        "SignatureVersion": "1",
+        "Signature": "ZFoNtfWXZjpRxrJU+QOuHEZRELGZvCHkmaagjhdsFsq7Sklc5RvnDBO4XDo5Xb0FUWp1ygEG0DXWxyeWpVF+3xMt3LrHeMDSllhdUITeDg2rw2d/5db/4emfFrfsjORsYTxzAee3MEz+iuw08LTBwQsudDifdjCraj9asNoteL1TOBRwOFwDxeGeXN9QsfYZub1jQXLqIjlQpQX5VXrWUUfWRIoqkxxNbH97ndREX09j1R164QkYQ2k/13DPViEQb0mS6bHemM3SNFYvHLgOqv7pOjrFYwTZhAK6XDiGX4Onte72cA5GYRZpUMsPfhFJQbHT7qvtQhwH5n8GjJDq3w==",
+        "SigningCertUrl": "https://sns.eu-west-1.amazonaws.com/SimpleNotificationService-6aad65c2f9911b05cd53efda11f913f9.pem",
+        "UnsubscribeUrl": "https://sns.eu-west-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:eu-west-1:1234567890:test-telegram:11111111-1c2d-40b2-b7f6-0a7ca32310c0",
+        "MessageAttributes": {}
+      }
+    }
+  ]
+}
